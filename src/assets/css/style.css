@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+html, h1, h2, p, ul {
+    font-size: 100%;
+    font-family: "Roboto", serif;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+body {
+    background: rgba(16, 16, 16, 0.1);
+}
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 1rem 0;
+}
+nav a {
+    display: block;
+    text-transform: capitalize;
+    text-decoration: none;
+    padding: 8px 1.5rem;
+    color: #616161;
+    border-radius: 0 20px 0 20px;
+    box-shadow: 2px 2px 5px #BABECC,
+       -5px -5px 10px #ffffff73;
+    transition: all 0.3s ease-in-out;
+}
+nav a:hover {
+    border-radius: 20px 0 20px 0;
+    color: #212121;
+}
+nav a.router-link-exact-active {
+    border-radius: 20px 0 20px 0;
+    color: #212121;
+    box-shadow: inset 1px 1px 2px #BABECC,
+      inset -1px -1px 2px #ffffff73;
+}
+.wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 4rem;
+}
+.calculator {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    width: 285px;
+    text-align: center;
+    color: #e6e5e5;
+    border-radius: 10px;
+}
+.rounded-b-l {
+    border-bottom-left-radius: 10px;
+}
+.rounded-b-r {
+    border-bottom-right-radius: 10px;
+}
+.calculator > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    border: 1px solid rgba(0,0,0,0.1);
+    cursor: pointer;
+    overflow: hidden;
+    padding: 5px;
+    box-sizing: border-box;
+}
+.cols-span-2 {
+    grid-column: 1/3;
+}
+.bg-primary {
+    background-color: #f9a509;
+    color: #FFF;
+}
+.display {
+    grid-column: 1/5;
+    font-size: 24px;
+    padding: 10px 14px 0 !important;
+    justify-content: end !important;
+    border: none !important;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.icon {
+    grid-column: 1/5;
+    height: auto !important;
+    justify-content: start !important;
+    padding: 4px 10px;
+    border: none !important;
+}
+.icon > ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: start;
+    gap: 5px;
+}
+.icon-size {
+    width: 20px;
+    height: 20px;
+    transform: scale(0.90);
+    transition: transform 0.3s;
+}
+.icon-size:hover {
+    color: #FFF;
+    transform: scale(1);
+}
+
+.history {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: calc(100% - 68px);
+    height: calc(100% - 83px);
+    background-color: rgb(114, 119, 119);
+    overflow: auto;
+}
+.history > li {
+    padding: 5px 10px;
+    color: #e6e5e5;
+    font-size: 14px;
+}
+
+
+.setting-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+.setting {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #FFF;
+    width: 400px;
+    min-height: 370px;
+    border-radius: 10px;
+}
+.setting > .title {
+    font-size: 20px;
+    font-weight: 600;
+    font-style: italic;
+    text-align: center;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    padding: 10px 0;
+}
+.form-box {
+    padding: 1rem 0;
+}
+.form-group {
+    display: grid;
+    grid-template-columns: 100px auto;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    font-size: 14px;
+}
+.form-control {
+    padding: 2px 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.form-btn-group {
+    padding-top: 10px;
+    text-align: center;
+}
+.setting-btn {
+    width: 140px;
+    padding: 4px 0;
+    border: none;
+    background-color: #f9a509;
+    border-radius: 0.25rem;
+    color: #212121;
+    cursor: pointer;
+    margin: 0 5px;
+}
+.btn-danger {
+    background-color: rgba(200,0,0  );
+    color: #FFF;
+}
+
+.history-items {
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    padding: 1rem;
+    font-size: 14px;
+    width: 500px;
+    height: 450px;
+    margin: 1rem auto;
+    border-radius: 10px;
+    overflow: auto;
+}
+.history-items > li {
+    padding: 4px 0;
+}
+.history-title {
+    font-size: 2rem;
+    text-align: center;
+    padding: 10px 0;
+    font-weight: 700;
+    font-style: italic;
+    margin-top: 1rem;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    padding: 1rem 0;
+    font-size: 13px;
+}
